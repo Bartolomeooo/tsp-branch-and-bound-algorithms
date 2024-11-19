@@ -4,7 +4,6 @@
 
 #include "CostMatrixGraph.h"
 #include "Config.h"
-#include "TSPAlgorithms.h"
 #include "BranchAndBoundTSPAlgorithms.h"
 
 class TSPSolver {

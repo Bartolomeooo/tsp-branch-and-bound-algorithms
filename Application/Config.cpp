@@ -49,13 +49,7 @@ void Config::saveResultsToCSV(std::string& algorithm, int numCities, int iterati
     std::string filename;
 
     // Select the file name based on the algorithm type
-    if (algorithm == "brute_force") {
-        filename = "brute_force_results.csv";
-    } else if (algorithm == "nearest_neighbor") {
-        filename = "nearest_neighbor_results.csv";
-    } else if (algorithm == "random") {
-        filename = "random_results.csv";
-    } else if (algorithm == "branch_and_bound_bfs") {
+    if (algorithm == "branch_and_bound_bfs") {
         filename = "branch_and_bound_bfs_results.csv";
     } else if (algorithm == "branch_and_bound_dfs") {
         filename = "branch_and_bound_dfs_results.csv";

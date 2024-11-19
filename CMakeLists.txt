@@ -13,12 +13,21 @@ add_executable(travelling_salesman_problem
         Application/Config.h
         TSPAlgorithms/BranchAndBoundTSPAlgorithms.cpp
         TSPAlgorithms/BranchAndBoundTSPAlgorithms.h
-        Application/Config.h)
+        Application/Config.h
+        PriorityQueue/PriorityQueue.cpp
+        PriorityQueue/PriorityQueue.h
+        Utils/AlgorithmUtils.cpp
+        Utils/AlgorithmUtils.h
+        Stack/Stack.cpp
+        Stack/Stack.h)
 
 target_include_directories(travelling_salesman_problem PRIVATE
         ${CMAKE_CURRENT_SOURCE_DIR}/CostMatrixGraph
         ${CMAKE_CURRENT_SOURCE_DIR}/TSPAlgorithms
         ${CMAKE_CURRENT_SOURCE_DIR}/Application
+        ${CMAKE_CURRENT_SOURCE_DIR}/Utils
+        ${CMAKE_CURRENT_SOURCE_DIR}/PriorityQueue
+        ${CMAKE_CURRENT_SOURCE_DIR}/Stack
 )
 
 #set(CMAKE_EXE_LINKER_FLAGS "-static")
