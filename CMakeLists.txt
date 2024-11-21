@@ -21,7 +21,9 @@ add_executable(travelling_salesman_problem
         Stack/Stack.cpp
         Stack/Stack.h
         SymmetricCostMatrix/SymmetricCostMatrix.cpp
-        SymmetricCostMatrix/SymmetricCostMatrix.h)
+        SymmetricCostMatrix/SymmetricCostMatrix.h
+        TSPAlgorithms/SymmetricBranchAndBoundTSPAlgorithms.cpp
+        TSPAlgorithms/SymmetricBranchAndBoundTSPAlgorithms.h)
 
 target_include_directories(travelling_salesman_problem PRIVATE
         ${CMAKE_CURRENT_SOURCE_DIR}/CostMatrixGraph

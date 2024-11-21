@@ -1,6 +1,6 @@
 #ifndef SYMMETRICCOSTMATRIX_H
 #define SYMMETRICCOSTMATRIX_H
-
+#include <string>
 
 
 class SymmetricCostMatrix {
@@ -19,6 +19,15 @@ public:
 
     // Get the number of cities in the matrix
     int getNumOfCities() const;
+
+    // Fill the cost matrix from a file
+    void fillFromFile(const std::string& filePath);
+
+    // Fill the cost matrix with random data
+    void fillRandom(int maxCost);
+
+    // Print the cost matrix
+    void printMatrix() const;
 
 private:
     int numOfCities;     // Number of cities in the matrix
