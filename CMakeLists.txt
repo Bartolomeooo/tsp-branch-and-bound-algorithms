@@ -19,7 +19,9 @@ add_executable(travelling_salesman_problem
         Utils/AlgorithmUtils.cpp
         Utils/AlgorithmUtils.h
         Stack/Stack.cpp
-        Stack/Stack.h)
+        Stack/Stack.h
+        SymmetricCostMatrix/SymmetricCostMatrix.cpp
+        SymmetricCostMatrix/SymmetricCostMatrix.h)
 
 target_include_directories(travelling_salesman_problem PRIVATE
         ${CMAKE_CURRENT_SOURCE_DIR}/CostMatrixGraph
@@ -28,6 +30,7 @@ target_include_directories(travelling_salesman_problem PRIVATE
         ${CMAKE_CURRENT_SOURCE_DIR}/Utils
         ${CMAKE_CURRENT_SOURCE_DIR}/PriorityQueue
         ${CMAKE_CURRENT_SOURCE_DIR}/Stack
+        ${CMAKE_CURRENT_SOURCE_DIR}/SymmetricCostMatrix
 )
 
 #set(CMAKE_EXE_LINKER_FLAGS "-static")
