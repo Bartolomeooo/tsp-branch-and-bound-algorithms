@@ -1,0 +1,8 @@
+algorithm=branch_and_bound_bfs
+matrix_file=matrix_6x6.atsp
+iterations=1
+random_data=false
+output_csv=results.csv
+num_cities=5
+progress_info=false
+random_iterations=0.01
