@@ -10,6 +10,7 @@ public:
     struct State {
         std::vector<int> path;
         int cost;
+        int bound;
         int currentCity;
     };
 

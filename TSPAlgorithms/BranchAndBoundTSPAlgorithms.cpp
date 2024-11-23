@@ -1,29 +1,57 @@
 #include "BranchAndBoundTSPAlgorithms.h"
-
-#include <algorithm>
-
 #include "PriorityQueue.h"
 #include "Stack.h"
 #include <vector>
 #include <limits>
+#include <algorithm>
+#include "Queue.h"
 
 using namespace std;
 
-// BFS-based Branch and Bound TSP algorithm
-int BranchAndBoundTSPAlgorithms::branchAndBoundBFS(CostMatrixGraph& graph, vector<int>& bestPath) {
+// Helper function to calculate the lower bound for a state
+int BranchAndBoundTSPAlgorithms::calculateBound(CostMatrixGraph& graph, vector<int>& path, int currentCost) {
     int numOfCities = graph.getNumOfVertexes();
-    PriorityQueue pq;  // Use custom PriorityQueue
-    vector<int> initialPath = {0};  // Start from city 0
+    int bound = currentCost;
 
-    pq.push({initialPath, 0, 0});
+    // Add minimum edge costs for unvisited cities
+    for (int city = 0; city < numOfCities; ++city) {
+        if (find(path.begin(), path.end(), city) == path.end()) { // City not visited
+            int minEdgeCost = numeric_limits<int>::max();
+            for (int nextCity = 0; nextCity < numOfCities; ++nextCity) {
+                int cost = graph.findElement(city, nextCity);
+                if (cost != -1 && city != nextCity) {
+                    minEdgeCost = min(minEdgeCost, cost);
+                }
+            }
+            bound += minEdgeCost;
+        }
+    }
 
-    int minCost = numeric_limits<int>::max();
+    return bound;
+}
 
-    while (!pq.empty()) {
-        auto current = pq.pop();
+// BFS with a priority queue and lower bound consideration
+int BranchAndBoundTSPAlgorithms::branchAndBoundBFS(CostMatrixGraph& graph, std::vector<int>& bestPath) {
+    int numOfCities = graph.getNumOfVertexes();
+    Queue queue;
+    std::vector<int> initialPath = {0};  // Start from city 0
+
+    // Calculate bound for the initial state
+    int initialBound = calculateBound(graph, initialPath, 0);
+    queue.push({initialPath, 0, 0});  // Add the initial state
+
+    int minCost = std::numeric_limits<int>::max();
+
+    while (!queue.empty()) {
+        auto current = queue.pop();
+
+        // Skip this state if its bound is greater than or equal to the current minimum cost
+        if (current.cost >= minCost) {
+            continue;
+        }
 
         if (current.path.size() == numOfCities) {
-            // Complete the cycle by returning to the start
+            // Complete the cycle by returning to the starting city
             int costToStart = graph.findElement(current.currentCity, 0);
             if (costToStart != -1) {
                 int totalCost = current.cost + costToStart;
@@ -38,12 +66,22 @@ int BranchAndBoundTSPAlgorithms::branchAndBoundBFS(CostMatrixGraph& graph, vecto
 
         // Expand the current state
         for (int nextCity = 0; nextCity < numOfCities; ++nextCity) {
-            if (find(current.path.begin(), current.path.end(), nextCity) == current.path.end()) {
+            if (std::find(current.path.begin(), current.path.end(), nextCity) == current.path.end()) {
                 int cost = graph.findElement(current.currentCity, nextCity);
                 if (cost != -1) {
-                    vector<int> newPath = current.path;
+                    std::vector<int> newPath = current.path;
                     newPath.push_back(nextCity);
-                    pq.push({newPath, current.cost + cost, nextCity});
+
+                    // Calculate new cost and bound
+                    int newCost = current.cost + cost;
+                    int newBound = calculateBound(graph, newPath, newCost);
+
+                    // Skip this state if its bound is greater than the current minimum cost
+                    if (newBound >= minCost) {
+                        continue;
+                    }
+
+                    queue.push({newPath, newCost, nextCity});
                 }
             }
         }
@@ -52,21 +90,26 @@ int BranchAndBoundTSPAlgorithms::branchAndBoundBFS(CostMatrixGraph& graph, vecto
     return minCost;
 }
 
-// DFS-based Branch and Bound TSP algorithm
+// DFS with lower bound consideration
 int BranchAndBoundTSPAlgorithms::branchAndBoundDFS(CostMatrixGraph& graph, vector<int>& bestPath) {
     int numOfCities = graph.getNumOfVertexes();
-    Stack stack;  // Use custom Stack
-    vector<int> initialPath = {0};  // Start from city 0
+    Stack stack;
+    vector<int> initialPath = {0}; // Start from city 0
 
-    stack.push({initialPath, 0, 0});
+    stack.push({initialPath, 0, calculateBound(graph, initialPath, 0), 0});
 
     int minCost = numeric_limits<int>::max();
 
     while (!stack.empty()) {
         auto current = stack.pop();
 
+        // Skip this state if its bound is greater than or equal to the current minimum cost
+        if (current.bound >= minCost) {
+            continue;
+        }
+
         if (current.path.size() == numOfCities) {
-            // Complete the cycle by returning to the start
+            // Complete the cycle by returning to the starting city
             int costToStart = graph.findElement(current.currentCity, 0);
             if (costToStart != -1) {
                 int totalCost = current.cost + costToStart;
@@ -86,7 +129,13 @@ int BranchAndBoundTSPAlgorithms::branchAndBoundDFS(CostMatrixGraph& graph, vecto
                 if (cost != -1) {
                     vector<int> newPath = current.path;
                     newPath.push_back(nextCity);
-                    stack.push({newPath, current.cost + cost, nextCity});
+
+                    // Calculate new cost and bound
+                    int newCost = current.cost + cost;
+                    int newBound = calculateBound(graph, newPath, newCost);
+
+                    // Push the new state to the stack
+                    stack.push({newPath, newCost, newBound, nextCity});
                 }
             }
         }
@@ -95,21 +144,27 @@ int BranchAndBoundTSPAlgorithms::branchAndBoundDFS(CostMatrixGraph& graph, vecto
     return minCost;
 }
 
-// Best-First Search-based Branch and Bound TSP algorithm
-int BranchAndBoundTSPAlgorithms::branchAndBoundBestFirst(CostMatrixGraph& graph, vector<int>& bestPath) {
+int BranchAndBoundTSPAlgorithms::branchAndBoundBestFirst(CostMatrixGraph& graph, std::vector<int>& bestPath) {
     int numOfCities = graph.getNumOfVertexes();
-    PriorityQueue pq;  // Use custom PriorityQueue
-    vector<int> initialPath = {0};  // Start from city 0
+    PriorityQueue pq;
+    std::vector<int> initialPath = {0}; // Start from city 0
 
-    pq.push({initialPath, 0, 0});
+    // Calculate bound for the initial state
+    int initialBound = calculateBound(graph, initialPath, 0);
+    pq.push({initialPath, 0, initialBound, 0});
 
-    int minCost = numeric_limits<int>::max();
+    int minCost = std::numeric_limits<int>::max();
 
     while (!pq.empty()) {
         auto current = pq.pop();
 
+        // Skip this state if its bound is greater than or equal to the current minimum cost
+        if (current.bound >= minCost) {
+            continue;
+        }
+
         if (current.path.size() == numOfCities) {
-            // Complete the cycle by returning to the start
+            // Complete the cycle by returning to the starting city
             int costToStart = graph.findElement(current.currentCity, 0);
             if (costToStart != -1) {
                 int totalCost = current.cost + costToStart;
@@ -122,14 +177,20 @@ int BranchAndBoundTSPAlgorithms::branchAndBoundBestFirst(CostMatrixGraph& graph,
             continue;
         }
 
-        // Expand the current state with heuristic prioritization
+        // Expand the current state
         for (int nextCity = 0; nextCity < numOfCities; ++nextCity) {
             if (find(current.path.begin(), current.path.end(), nextCity) == current.path.end()) {
                 int cost = graph.findElement(current.currentCity, nextCity);
                 if (cost != -1) {
-                    vector<int> newPath = current.path;
+                    std::vector<int> newPath = current.path;
                     newPath.push_back(nextCity);
-                    pq.push({newPath, current.cost + cost, nextCity});
+
+                    // Calculate new cost and bound
+                    int newCost = current.cost + cost;
+                    int newBound = calculateBound(graph, newPath, newCost);
+
+                    // Push the new state to the priority queue
+                    pq.push({newPath, newCost, newBound, nextCity});
                 }
             }
         }

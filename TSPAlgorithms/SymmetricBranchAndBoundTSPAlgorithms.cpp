@@ -5,18 +5,49 @@
 #include <limits>
 #include <algorithm>
 
+#include "Queue.h"
+
 using namespace std;
+
+// Helper function to calculate the lower bound for a state
+int calculateBound(const SymmetricCostMatrix& graph, const vector<int>& path, int currentCost) {
+    int numOfCities = graph.getNumOfCities();
+    int bound = currentCost;
+
+    // Include the minimum edge cost for unvisited cities
+    for (int city = 0; city < numOfCities; ++city) {
+        if (find(path.begin(), path.end(), city) == path.end()) { // City not visited
+            int minEdgeCost = numeric_limits<int>::max();
+            for (int nextCity = 0; nextCity < numOfCities; ++nextCity) {
+                if (city != nextCity && find(path.begin(), path.end(), nextCity) == path.end()) {
+                    int cost = graph.getCost(city, nextCity);
+                    if (cost != -1) {
+                        minEdgeCost = min(minEdgeCost, cost);
+                    }
+                }
+            }
+            bound += minEdgeCost;
+        }
+    }
+
+    return bound;
+}
 
 // BFS-based Branch and Bound TSP algorithm for symmetric matrices
 int SymmetricBranchAndBoundTSPAlgorithms::branchAndBoundBFS(SymmetricCostMatrix& graph, vector<int>& bestPath) {
     int numOfCities = graph.getNumOfCities();
-    PriorityQueue pq;  // Use custom PriorityQueue
+    Queue queue;  // Use custom PriorityQueue
     vector<int> initialPath = {0};  // Start from city 0
-    pq.push({initialPath, 0, 0});
+    int initialBound = calculateBound(graph, initialPath, 0);
+    queue.push({initialPath, 0, 0});
     int minCost = numeric_limits<int>::max();
 
-    while (!pq.empty()) {
-        auto current = pq.pop();
+    while (!queue.empty()) {
+        auto current = queue.pop();
+
+        if (current.cost >= minCost) {
+            continue; // Skip branches that exceed the current minimum cost
+        }
 
         if (current.path.size() == numOfCities) {
             // Complete the cycle by returning to the start
@@ -39,7 +70,10 @@ int SymmetricBranchAndBoundTSPAlgorithms::branchAndBoundBFS(SymmetricCostMatrix&
                 if (cost != -1) {
                     vector<int> newPath = current.path;
                     newPath.push_back(nextCity);
-                    pq.push({newPath, current.cost + cost, nextCity});
+
+                    int newCost = current.cost + cost;
+                    int newBound = calculateBound(graph, newPath, newCost);
+                    queue.push({newPath, newCost, nextCity});
                 }
             }
         }
@@ -53,11 +87,16 @@ int SymmetricBranchAndBoundTSPAlgorithms::branchAndBoundDFS(SymmetricCostMatrix&
     int numOfCities = graph.getNumOfCities();
     Stack stack;  // Use custom Stack
     vector<int> initialPath = {0};  // Start from city 0
-    stack.push({initialPath, 0, 0});
+    int initialBound = calculateBound(graph, initialPath, 0);
+    stack.push({initialPath, 0, initialBound, 0});
     int minCost = numeric_limits<int>::max();
 
     while (!stack.empty()) {
         auto current = stack.pop();
+
+        if (current.bound >= minCost) {
+            continue; // Skip branches that exceed the current minimum cost
+        }
 
         if (current.path.size() == numOfCities) {
             // Complete the cycle by returning to the start
@@ -80,7 +119,10 @@ int SymmetricBranchAndBoundTSPAlgorithms::branchAndBoundDFS(SymmetricCostMatrix&
                 if (cost != -1) {
                     vector<int> newPath = current.path;
                     newPath.push_back(nextCity);
-                    stack.push({newPath, current.cost + cost, nextCity});
+
+                    int newCost = current.cost + cost;
+                    int newBound = calculateBound(graph, newPath, newCost);
+                    stack.push({newPath, newCost, newBound, nextCity});
                 }
             }
         }
@@ -94,11 +136,16 @@ int SymmetricBranchAndBoundTSPAlgorithms::branchAndBoundBestFirst(SymmetricCostM
     int numOfCities = graph.getNumOfCities();
     PriorityQueue pq;  // Use custom PriorityQueue
     vector<int> initialPath = {0};  // Start from city 0
-    pq.push({initialPath, 0, 0});
+    int initialBound = calculateBound(graph, initialPath, 0);
+    pq.push({initialPath, 0, initialBound, 0});
     int minCost = numeric_limits<int>::max();
 
     while (!pq.empty()) {
         auto current = pq.pop();
+
+        if (current.bound >= minCost) {
+            continue; // Skip branches that exceed the current minimum cost
+        }
 
         if (current.path.size() == numOfCities) {
             // Complete the cycle by returning to the start
@@ -121,7 +168,10 @@ int SymmetricBranchAndBoundTSPAlgorithms::branchAndBoundBestFirst(SymmetricCostM
                 if (cost != -1) {
                     vector<int> newPath = current.path;
                     newPath.push_back(nextCity);
-                    pq.push({newPath, current.cost + cost, nextCity});
+
+                    int newCost = current.cost + cost;
+                    int newBound = calculateBound(graph, newPath, newCost);
+                    pq.push({newPath, newCost, newBound, nextCity});
                 }
             }
         }

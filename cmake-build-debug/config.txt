@@ -1,4 +1,4 @@
-algorithm=branch_and_bound_bfs
+algorithm=branch_and_bound_dfs
 matrix_file=matrix_6x6.atsp
 iterations=1
 random_data=false
