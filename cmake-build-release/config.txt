@@ -1,0 +1,8 @@
+algorithm=branch_and_bound_best_first
+matrix_file=matrix_8x8.atsp
+iterations=1
+random_data=false
+output_csv=results.csv
+num_cities=9
+progress_info=false
+random_iterations=0.01

@@ -1,0 +1,13 @@
+# ninja log v6
+11	924	1732413323585919875	CMakeFiles/travelling_salesman_problem.dir/main.cpp.o	5a60c2b27e955872
+12	1063	1732413323586907722	CMakeFiles/travelling_salesman_problem.dir/Application/TSPSolver.cpp.o	7324fe21ffba005b
+23	956	1732407757983167853	CMakeFiles/travelling_salesman_problem.dir/PriorityQueue/PriorityQueue.cpp.o	3992fb02c9112df1
+12	1103	1732413323587084717	CMakeFiles/travelling_salesman_problem.dir/TSPAlgorithms/BranchAndBoundTSPAlgorithms.cpp.o	2506c2c28af4f4c5
+22	1098	1732407757982265542	CMakeFiles/travelling_salesman_problem.dir/Application/Config.cpp.o	684daa4e5e77a269
+882	1416	1732407758842853582	CMakeFiles/travelling_salesman_problem.dir/Utils/AlgorithmUtils.cpp.o	f3b3ea8f686ca3c
+947	1486	1732407758907199607	CMakeFiles/travelling_salesman_problem.dir/Stack/Stack.cpp.o	2f21c6923dff49a5
+1103	1227	1732413324678591163	travelling_salesman_problem	eb4f3fa0c8f74fe6
+12	1001	1732413323587645243	CMakeFiles/travelling_salesman_problem.dir/TSPAlgorithms/SymmetricBranchAndBoundTSPAlgorithms.cpp.o	ad7473247273ba08
+21	1063	1732407757981215652	CMakeFiles/travelling_salesman_problem.dir/CostMatrixGraph/CostMatrixGraph.cpp.o	e3a3931d5ee44c9c
+956	1598	1732407758916192841	CMakeFiles/travelling_salesman_problem.dir/SymmetricCostMatrix/SymmetricCostMatrix.cpp.o	5ad9d7f3a2c04ed7
+13	938	1732413323588132688	CMakeFiles/travelling_salesman_problem.dir/Queue/Queue.cpp.o	6674347af7ef2001

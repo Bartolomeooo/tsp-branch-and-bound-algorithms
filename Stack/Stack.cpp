@@ -2,18 +2,18 @@
 #include "Stack.h"
 #include <stdexcept>
 
-void Stack::push(const State& state) {
+void Stack::push(const Node& state) {
     stack.push_back(state);
 }
 
-Stack::State Stack::pop() {
+Stack::Node Stack::pop() {
     if (stack.empty()) {
         throw std::out_of_range("Stack is empty");
     }
 
-    State state = stack.back();
+    Node node = stack.back();
     stack.pop_back();
-    return state;
+    return node;
 }
 
 bool Stack::empty() const {

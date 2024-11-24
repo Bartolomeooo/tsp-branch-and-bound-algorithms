@@ -1,0 +1,13 @@
+branch_and_bound_bfs,8,10,66.7762
+branch_and_bound_bfs,4,100,0.00514751
+branch_and_bound_bfs,5,100,0.0378779
+branch_and_bound_bfs,6,100,0.18645
+branch_and_bound_bfs,7,100,2.21567
+branch_and_bound_bfs,8,100,67.1911
+branch_and_bound_bfs,9,10,3788.81
+branch_and_bound_bfs,3,100,0.00130373
+branch_and_bound_bfs,9,1,71.9107
+branch_and_bound_bfs,9,1,71.2129
+branch_and_bound_bfs,9,1,71.7769
+branch_and_bound_bfs,9,1,0.20575
+branch_and_bound_bfs,9,1,73.4874

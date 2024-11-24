@@ -52,37 +52,79 @@ build cmake_object_order_depends_target_travelling_salesman_problem: phony || .
 build CMakeFiles/travelling_salesman_problem.dir/CostMatrixGraph/CostMatrixGraph.cpp.o: CXX_COMPILER__travelling_salesman_problem_unscanned_Debug /Users/bartoszkawiak/CLionProjects/TSP-2/CostMatrixGraph/CostMatrixGraph.cpp || cmake_object_order_depends_target_travelling_salesman_problem
   DEP_FILE = CMakeFiles/travelling_salesman_problem.dir/CostMatrixGraph/CostMatrixGraph.cpp.o.d
   FLAGS = -g -std=gnu++20 -arch arm64 -isysroot /Library/Developer/CommandLineTools/SDKs/MacOSX15.0.sdk -fcolor-diagnostics
-  INCLUDES = -I/Users/bartoszkawiak/CLionProjects/TSP-2/CostMatrixGraph -I/Users/bartoszkawiak/CLionProjects/TSP-2/TSPAlgorithms -I/Users/bartoszkawiak/CLionProjects/TSP-2/Application
+  INCLUDES = -I/Users/bartoszkawiak/CLionProjects/TSP-2/CostMatrixGraph -I/Users/bartoszkawiak/CLionProjects/TSP-2/TSPAlgorithms -I/Users/bartoszkawiak/CLionProjects/TSP-2/Application -I/Users/bartoszkawiak/CLionProjects/TSP-2/Utils -I/Users/bartoszkawiak/CLionProjects/TSP-2/PriorityQueue -I/Users/bartoszkawiak/CLionProjects/TSP-2/Stack -I/Users/bartoszkawiak/CLionProjects/TSP-2/SymmetricCostMatrix -I/Users/bartoszkawiak/CLionProjects/TSP-2/Queue
   OBJECT_DIR = CMakeFiles/travelling_salesman_problem.dir
   OBJECT_FILE_DIR = CMakeFiles/travelling_salesman_problem.dir/CostMatrixGraph
 
 build CMakeFiles/travelling_salesman_problem.dir/main.cpp.o: CXX_COMPILER__travelling_salesman_problem_unscanned_Debug /Users/bartoszkawiak/CLionProjects/TSP-2/main.cpp || cmake_object_order_depends_target_travelling_salesman_problem
   DEP_FILE = CMakeFiles/travelling_salesman_problem.dir/main.cpp.o.d
   FLAGS = -g -std=gnu++20 -arch arm64 -isysroot /Library/Developer/CommandLineTools/SDKs/MacOSX15.0.sdk -fcolor-diagnostics
-  INCLUDES = -I/Users/bartoszkawiak/CLionProjects/TSP-2/CostMatrixGraph -I/Users/bartoszkawiak/CLionProjects/TSP-2/TSPAlgorithms -I/Users/bartoszkawiak/CLionProjects/TSP-2/Application
+  INCLUDES = -I/Users/bartoszkawiak/CLionProjects/TSP-2/CostMatrixGraph -I/Users/bartoszkawiak/CLionProjects/TSP-2/TSPAlgorithms -I/Users/bartoszkawiak/CLionProjects/TSP-2/Application -I/Users/bartoszkawiak/CLionProjects/TSP-2/Utils -I/Users/bartoszkawiak/CLionProjects/TSP-2/PriorityQueue -I/Users/bartoszkawiak/CLionProjects/TSP-2/Stack -I/Users/bartoszkawiak/CLionProjects/TSP-2/SymmetricCostMatrix -I/Users/bartoszkawiak/CLionProjects/TSP-2/Queue
   OBJECT_DIR = CMakeFiles/travelling_salesman_problem.dir
   OBJECT_FILE_DIR = CMakeFiles/travelling_salesman_problem.dir
 
 build CMakeFiles/travelling_salesman_problem.dir/Application/TSPSolver.cpp.o: CXX_COMPILER__travelling_salesman_problem_unscanned_Debug /Users/bartoszkawiak/CLionProjects/TSP-2/Application/TSPSolver.cpp || cmake_object_order_depends_target_travelling_salesman_problem
   DEP_FILE = CMakeFiles/travelling_salesman_problem.dir/Application/TSPSolver.cpp.o.d
   FLAGS = -g -std=gnu++20 -arch arm64 -isysroot /Library/Developer/CommandLineTools/SDKs/MacOSX15.0.sdk -fcolor-diagnostics
-  INCLUDES = -I/Users/bartoszkawiak/CLionProjects/TSP-2/CostMatrixGraph -I/Users/bartoszkawiak/CLionProjects/TSP-2/TSPAlgorithms -I/Users/bartoszkawiak/CLionProjects/TSP-2/Application
+  INCLUDES = -I/Users/bartoszkawiak/CLionProjects/TSP-2/CostMatrixGraph -I/Users/bartoszkawiak/CLionProjects/TSP-2/TSPAlgorithms -I/Users/bartoszkawiak/CLionProjects/TSP-2/Application -I/Users/bartoszkawiak/CLionProjects/TSP-2/Utils -I/Users/bartoszkawiak/CLionProjects/TSP-2/PriorityQueue -I/Users/bartoszkawiak/CLionProjects/TSP-2/Stack -I/Users/bartoszkawiak/CLionProjects/TSP-2/SymmetricCostMatrix -I/Users/bartoszkawiak/CLionProjects/TSP-2/Queue
   OBJECT_DIR = CMakeFiles/travelling_salesman_problem.dir
   OBJECT_FILE_DIR = CMakeFiles/travelling_salesman_problem.dir/Application
 
 build CMakeFiles/travelling_salesman_problem.dir/Application/Config.cpp.o: CXX_COMPILER__travelling_salesman_problem_unscanned_Debug /Users/bartoszkawiak/CLionProjects/TSP-2/Application/Config.cpp || cmake_object_order_depends_target_travelling_salesman_problem
   DEP_FILE = CMakeFiles/travelling_salesman_problem.dir/Application/Config.cpp.o.d
   FLAGS = -g -std=gnu++20 -arch arm64 -isysroot /Library/Developer/CommandLineTools/SDKs/MacOSX15.0.sdk -fcolor-diagnostics
-  INCLUDES = -I/Users/bartoszkawiak/CLionProjects/TSP-2/CostMatrixGraph -I/Users/bartoszkawiak/CLionProjects/TSP-2/TSPAlgorithms -I/Users/bartoszkawiak/CLionProjects/TSP-2/Application
+  INCLUDES = -I/Users/bartoszkawiak/CLionProjects/TSP-2/CostMatrixGraph -I/Users/bartoszkawiak/CLionProjects/TSP-2/TSPAlgorithms -I/Users/bartoszkawiak/CLionProjects/TSP-2/Application -I/Users/bartoszkawiak/CLionProjects/TSP-2/Utils -I/Users/bartoszkawiak/CLionProjects/TSP-2/PriorityQueue -I/Users/bartoszkawiak/CLionProjects/TSP-2/Stack -I/Users/bartoszkawiak/CLionProjects/TSP-2/SymmetricCostMatrix -I/Users/bartoszkawiak/CLionProjects/TSP-2/Queue
   OBJECT_DIR = CMakeFiles/travelling_salesman_problem.dir
   OBJECT_FILE_DIR = CMakeFiles/travelling_salesman_problem.dir/Application
 
 build CMakeFiles/travelling_salesman_problem.dir/TSPAlgorithms/BranchAndBoundTSPAlgorithms.cpp.o: CXX_COMPILER__travelling_salesman_problem_unscanned_Debug /Users/bartoszkawiak/CLionProjects/TSP-2/TSPAlgorithms/BranchAndBoundTSPAlgorithms.cpp || cmake_object_order_depends_target_travelling_salesman_problem
   DEP_FILE = CMakeFiles/travelling_salesman_problem.dir/TSPAlgorithms/BranchAndBoundTSPAlgorithms.cpp.o.d
   FLAGS = -g -std=gnu++20 -arch arm64 -isysroot /Library/Developer/CommandLineTools/SDKs/MacOSX15.0.sdk -fcolor-diagnostics
-  INCLUDES = -I/Users/bartoszkawiak/CLionProjects/TSP-2/CostMatrixGraph -I/Users/bartoszkawiak/CLionProjects/TSP-2/TSPAlgorithms -I/Users/bartoszkawiak/CLionProjects/TSP-2/Application
+  INCLUDES = -I/Users/bartoszkawiak/CLionProjects/TSP-2/CostMatrixGraph -I/Users/bartoszkawiak/CLionProjects/TSP-2/TSPAlgorithms -I/Users/bartoszkawiak/CLionProjects/TSP-2/Application -I/Users/bartoszkawiak/CLionProjects/TSP-2/Utils -I/Users/bartoszkawiak/CLionProjects/TSP-2/PriorityQueue -I/Users/bartoszkawiak/CLionProjects/TSP-2/Stack -I/Users/bartoszkawiak/CLionProjects/TSP-2/SymmetricCostMatrix -I/Users/bartoszkawiak/CLionProjects/TSP-2/Queue
   OBJECT_DIR = CMakeFiles/travelling_salesman_problem.dir
   OBJECT_FILE_DIR = CMakeFiles/travelling_salesman_problem.dir/TSPAlgorithms
+
+build CMakeFiles/travelling_salesman_problem.dir/PriorityQueue/PriorityQueue.cpp.o: CXX_COMPILER__travelling_salesman_problem_unscanned_Debug /Users/bartoszkawiak/CLionProjects/TSP-2/PriorityQueue/PriorityQueue.cpp || cmake_object_order_depends_target_travelling_salesman_problem
+  DEP_FILE = CMakeFiles/travelling_salesman_problem.dir/PriorityQueue/PriorityQueue.cpp.o.d
+  FLAGS = -g -std=gnu++20 -arch arm64 -isysroot /Library/Developer/CommandLineTools/SDKs/MacOSX15.0.sdk -fcolor-diagnostics
+  INCLUDES = -I/Users/bartoszkawiak/CLionProjects/TSP-2/CostMatrixGraph -I/Users/bartoszkawiak/CLionProjects/TSP-2/TSPAlgorithms -I/Users/bartoszkawiak/CLionProjects/TSP-2/Application -I/Users/bartoszkawiak/CLionProjects/TSP-2/Utils -I/Users/bartoszkawiak/CLionProjects/TSP-2/PriorityQueue -I/Users/bartoszkawiak/CLionProjects/TSP-2/Stack -I/Users/bartoszkawiak/CLionProjects/TSP-2/SymmetricCostMatrix -I/Users/bartoszkawiak/CLionProjects/TSP-2/Queue
+  OBJECT_DIR = CMakeFiles/travelling_salesman_problem.dir
+  OBJECT_FILE_DIR = CMakeFiles/travelling_salesman_problem.dir/PriorityQueue
+
+build CMakeFiles/travelling_salesman_problem.dir/Utils/AlgorithmUtils.cpp.o: CXX_COMPILER__travelling_salesman_problem_unscanned_Debug /Users/bartoszkawiak/CLionProjects/TSP-2/Utils/AlgorithmUtils.cpp || cmake_object_order_depends_target_travelling_salesman_problem
+  DEP_FILE = CMakeFiles/travelling_salesman_problem.dir/Utils/AlgorithmUtils.cpp.o.d
+  FLAGS = -g -std=gnu++20 -arch arm64 -isysroot /Library/Developer/CommandLineTools/SDKs/MacOSX15.0.sdk -fcolor-diagnostics
+  INCLUDES = -I/Users/bartoszkawiak/CLionProjects/TSP-2/CostMatrixGraph -I/Users/bartoszkawiak/CLionProjects/TSP-2/TSPAlgorithms -I/Users/bartoszkawiak/CLionProjects/TSP-2/Application -I/Users/bartoszkawiak/CLionProjects/TSP-2/Utils -I/Users/bartoszkawiak/CLionProjects/TSP-2/PriorityQueue -I/Users/bartoszkawiak/CLionProjects/TSP-2/Stack -I/Users/bartoszkawiak/CLionProjects/TSP-2/SymmetricCostMatrix -I/Users/bartoszkawiak/CLionProjects/TSP-2/Queue
+  OBJECT_DIR = CMakeFiles/travelling_salesman_problem.dir
+  OBJECT_FILE_DIR = CMakeFiles/travelling_salesman_problem.dir/Utils
+
+build CMakeFiles/travelling_salesman_problem.dir/Stack/Stack.cpp.o: CXX_COMPILER__travelling_salesman_problem_unscanned_Debug /Users/bartoszkawiak/CLionProjects/TSP-2/Stack/Stack.cpp || cmake_object_order_depends_target_travelling_salesman_problem
+  DEP_FILE = CMakeFiles/travelling_salesman_problem.dir/Stack/Stack.cpp.o.d
+  FLAGS = -g -std=gnu++20 -arch arm64 -isysroot /Library/Developer/CommandLineTools/SDKs/MacOSX15.0.sdk -fcolor-diagnostics
+  INCLUDES = -I/Users/bartoszkawiak/CLionProjects/TSP-2/CostMatrixGraph -I/Users/bartoszkawiak/CLionProjects/TSP-2/TSPAlgorithms -I/Users/bartoszkawiak/CLionProjects/TSP-2/Application -I/Users/bartoszkawiak/CLionProjects/TSP-2/Utils -I/Users/bartoszkawiak/CLionProjects/TSP-2/PriorityQueue -I/Users/bartoszkawiak/CLionProjects/TSP-2/Stack -I/Users/bartoszkawiak/CLionProjects/TSP-2/SymmetricCostMatrix -I/Users/bartoszkawiak/CLionProjects/TSP-2/Queue
+  OBJECT_DIR = CMakeFiles/travelling_salesman_problem.dir
+  OBJECT_FILE_DIR = CMakeFiles/travelling_salesman_problem.dir/Stack
+
+build CMakeFiles/travelling_salesman_problem.dir/SymmetricCostMatrix/SymmetricCostMatrix.cpp.o: CXX_COMPILER__travelling_salesman_problem_unscanned_Debug /Users/bartoszkawiak/CLionProjects/TSP-2/SymmetricCostMatrix/SymmetricCostMatrix.cpp || cmake_object_order_depends_target_travelling_salesman_problem
+  DEP_FILE = CMakeFiles/travelling_salesman_problem.dir/SymmetricCostMatrix/SymmetricCostMatrix.cpp.o.d
+  FLAGS = -g -std=gnu++20 -arch arm64 -isysroot /Library/Developer/CommandLineTools/SDKs/MacOSX15.0.sdk -fcolor-diagnostics
+  INCLUDES = -I/Users/bartoszkawiak/CLionProjects/TSP-2/CostMatrixGraph -I/Users/bartoszkawiak/CLionProjects/TSP-2/TSPAlgorithms -I/Users/bartoszkawiak/CLionProjects/TSP-2/Application -I/Users/bartoszkawiak/CLionProjects/TSP-2/Utils -I/Users/bartoszkawiak/CLionProjects/TSP-2/PriorityQueue -I/Users/bartoszkawiak/CLionProjects/TSP-2/Stack -I/Users/bartoszkawiak/CLionProjects/TSP-2/SymmetricCostMatrix -I/Users/bartoszkawiak/CLionProjects/TSP-2/Queue
+  OBJECT_DIR = CMakeFiles/travelling_salesman_problem.dir
+  OBJECT_FILE_DIR = CMakeFiles/travelling_salesman_problem.dir/SymmetricCostMatrix
+
+build CMakeFiles/travelling_salesman_problem.dir/TSPAlgorithms/SymmetricBranchAndBoundTSPAlgorithms.cpp.o: CXX_COMPILER__travelling_salesman_problem_unscanned_Debug /Users/bartoszkawiak/CLionProjects/TSP-2/TSPAlgorithms/SymmetricBranchAndBoundTSPAlgorithms.cpp || cmake_object_order_depends_target_travelling_salesman_problem
+  DEP_FILE = CMakeFiles/travelling_salesman_problem.dir/TSPAlgorithms/SymmetricBranchAndBoundTSPAlgorithms.cpp.o.d
+  FLAGS = -g -std=gnu++20 -arch arm64 -isysroot /Library/Developer/CommandLineTools/SDKs/MacOSX15.0.sdk -fcolor-diagnostics
+  INCLUDES = -I/Users/bartoszkawiak/CLionProjects/TSP-2/CostMatrixGraph -I/Users/bartoszkawiak/CLionProjects/TSP-2/TSPAlgorithms -I/Users/bartoszkawiak/CLionProjects/TSP-2/Application -I/Users/bartoszkawiak/CLionProjects/TSP-2/Utils -I/Users/bartoszkawiak/CLionProjects/TSP-2/PriorityQueue -I/Users/bartoszkawiak/CLionProjects/TSP-2/Stack -I/Users/bartoszkawiak/CLionProjects/TSP-2/SymmetricCostMatrix -I/Users/bartoszkawiak/CLionProjects/TSP-2/Queue
+  OBJECT_DIR = CMakeFiles/travelling_salesman_problem.dir
+  OBJECT_FILE_DIR = CMakeFiles/travelling_salesman_problem.dir/TSPAlgorithms
+
+build CMakeFiles/travelling_salesman_problem.dir/Queue/Queue.cpp.o: CXX_COMPILER__travelling_salesman_problem_unscanned_Debug /Users/bartoszkawiak/CLionProjects/TSP-2/Queue/Queue.cpp || cmake_object_order_depends_target_travelling_salesman_problem
+  DEP_FILE = CMakeFiles/travelling_salesman_problem.dir/Queue/Queue.cpp.o.d
+  FLAGS = -g -std=gnu++20 -arch arm64 -isysroot /Library/Developer/CommandLineTools/SDKs/MacOSX15.0.sdk -fcolor-diagnostics
+  INCLUDES = -I/Users/bartoszkawiak/CLionProjects/TSP-2/CostMatrixGraph -I/Users/bartoszkawiak/CLionProjects/TSP-2/TSPAlgorithms -I/Users/bartoszkawiak/CLionProjects/TSP-2/Application -I/Users/bartoszkawiak/CLionProjects/TSP-2/Utils -I/Users/bartoszkawiak/CLionProjects/TSP-2/PriorityQueue -I/Users/bartoszkawiak/CLionProjects/TSP-2/Stack -I/Users/bartoszkawiak/CLionProjects/TSP-2/SymmetricCostMatrix -I/Users/bartoszkawiak/CLionProjects/TSP-2/Queue
+  OBJECT_DIR = CMakeFiles/travelling_salesman_problem.dir
+  OBJECT_FILE_DIR = CMakeFiles/travelling_salesman_problem.dir/Queue
 
 
 # =============================================================================
@@ -92,7 +134,7 @@ build CMakeFiles/travelling_salesman_problem.dir/TSPAlgorithms/BranchAndBoundTSP
 #############################################
 # Link the executable travelling_salesman_problem
 
-build travelling_salesman_problem: CXX_EXECUTABLE_LINKER__travelling_salesman_problem_Debug CMakeFiles/travelling_salesman_problem.dir/CostMatrixGraph/CostMatrixGraph.cpp.o CMakeFiles/travelling_salesman_problem.dir/main.cpp.o CMakeFiles/travelling_salesman_problem.dir/Application/TSPSolver.cpp.o CMakeFiles/travelling_salesman_problem.dir/Application/Config.cpp.o CMakeFiles/travelling_salesman_problem.dir/TSPAlgorithms/BranchAndBoundTSPAlgorithms.cpp.o
+build travelling_salesman_problem: CXX_EXECUTABLE_LINKER__travelling_salesman_problem_Debug CMakeFiles/travelling_salesman_problem.dir/CostMatrixGraph/CostMatrixGraph.cpp.o CMakeFiles/travelling_salesman_problem.dir/main.cpp.o CMakeFiles/travelling_salesman_problem.dir/Application/TSPSolver.cpp.o CMakeFiles/travelling_salesman_problem.dir/Application/Config.cpp.o CMakeFiles/travelling_salesman_problem.dir/TSPAlgorithms/BranchAndBoundTSPAlgorithms.cpp.o CMakeFiles/travelling_salesman_problem.dir/PriorityQueue/PriorityQueue.cpp.o CMakeFiles/travelling_salesman_problem.dir/Utils/AlgorithmUtils.cpp.o CMakeFiles/travelling_salesman_problem.dir/Stack/Stack.cpp.o CMakeFiles/travelling_salesman_problem.dir/SymmetricCostMatrix/SymmetricCostMatrix.cpp.o CMakeFiles/travelling_salesman_problem.dir/TSPAlgorithms/SymmetricBranchAndBoundTSPAlgorithms.cpp.o CMakeFiles/travelling_salesman_problem.dir/Queue/Queue.cpp.o
   FLAGS = -g -arch arm64 -isysroot /Library/Developer/CommandLineTools/SDKs/MacOSX15.0.sdk
   OBJECT_DIR = CMakeFiles/travelling_salesman_problem.dir
   POST_BUILD = :

@@ -1,3 +1,3 @@
-C:/Users/barto/CLionProjects/TSP_2/cmake-build-debug/CMakeFiles/travelling_salesman_problem.dir
-C:/Users/barto/CLionProjects/TSP_2/cmake-build-debug/CMakeFiles/edit_cache.dir
-C:/Users/barto/CLionProjects/TSP_2/cmake-build-debug/CMakeFiles/rebuild_cache.dir
+/Users/bartoszkawiak/CLionProjects/TSP-2/cmake-build-debug/CMakeFiles/travelling_salesman_problem.dir
+/Users/bartoszkawiak/CLionProjects/TSP-2/cmake-build-debug/CMakeFiles/edit_cache.dir
+/Users/bartoszkawiak/CLionProjects/TSP-2/cmake-build-debug/CMakeFiles/rebuild_cache.dir

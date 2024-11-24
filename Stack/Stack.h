@@ -6,24 +6,24 @@
 
 class Stack {
 public:
-    struct State {
+    struct Node {
         std::vector<int> path;
         int cost;
         int bound;
         int currentCity;
     };
 
-    // Push a state onto the stack
-    void push(const State& state);
+    // Push a node onto the stack
+    void push(const Node& node);
 
-    // Pop a state from the stack
-    State pop();
+    // Pop a node from the stack
+    Node pop();
 
     // Check if the stack is empty
     bool empty() const;
 
 private:
-    std::vector<State> stack;
+    std::vector<Node> stack;
 };
 
 #endif // STACK_H

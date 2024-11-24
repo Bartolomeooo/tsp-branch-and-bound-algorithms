@@ -3,6 +3,9 @@
 
 #include "CostMatrixGraph.h"
 #include <vector>
+#include <Queue.h>
+#include <PriorityQueue.h>
+#include <Stack.h>
 
 class BranchAndBoundTSPAlgorithms {
 public:

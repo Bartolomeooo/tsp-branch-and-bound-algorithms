@@ -6,27 +6,28 @@
 
 class Queue {
 public:
-    // Structure to represent a state in the queue
-    struct State {
-        std::vector<int> path;  // The path of the state
-        int cost;               // The cost of the state
-        int currentCity;        // The current city in the state
+    // Structure to represent a node in the queue
+    struct Node {
+        std::vector<int> path;  // The path of the node
+        int cost;               // The cost of the node
+        int bound;              // The lower bound of the node
+        int currentCity;        // The current city in the node
     };
 
-    // Add a new state to the queue
-    void push(const State& state);
+    // Add a new node to the queue
+    void push(const Node& node);
 
-    // Remove and return the front state from the queue
-    State pop();
+    // Remove and return the front node from the queue
+    Node pop();
 
-    // Access the front state without removing it
-    const State& front() const;
+    // Access the front node without removing it
+    const Node& front() const;
 
     // Check if the queue is empty
     bool empty() const;
 
 private:
-    std::vector<State> data;  // Internal storage for the queue
+    std::vector<Node> data;  // Internal storage for the queue
 };
 
 #endif // QUEUE_H

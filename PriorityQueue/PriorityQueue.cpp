@@ -2,7 +2,7 @@
 
 #include <stdexcept>
 
-void PriorityQueue::push(const State& state) {
+void PriorityQueue::push(const Node& state) {
     queue.push_back(state);
     int index = queue.size() - 1;
     while (index > 0 && queue[index].bound < queue[index - 1].bound) {
@@ -10,13 +10,13 @@ void PriorityQueue::push(const State& state) {
         --index;
     }
 }
-PriorityQueue::State PriorityQueue::pop() {
+PriorityQueue::Node PriorityQueue::pop() {
     if (queue.empty()) {
         throw std::out_of_range("Priority queue is empty");
     }
 
     // Retrieve the state with the lowest cost.
-    State state = queue.front();
+    Node state = queue.front();
 
     // Remove the state from the queue.
     queue.erase(queue.begin());
