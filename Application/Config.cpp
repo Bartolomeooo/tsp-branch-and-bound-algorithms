@@ -30,6 +30,8 @@ ConfigData Config::loadConfig(const std::string& configFile) {
                     config.iterations = std::stoi(value);
                 } else if (key == "random_data") {
                     config.randomData = (value == "true");
+                } else if (key == "symmetric_matrix") {
+                    config.symmetricMatrix = (value == "true");
                 } else if (key == "num_cities") {
                     config.numCities = std::stoi(value);
                 } else if (key == "progress_info") {
@@ -45,7 +47,7 @@ ConfigData Config::loadConfig(const std::string& configFile) {
 }
 
 // Save the results to an appropriate CSV file based on the algorithm
-void Config::saveResultsToCSV(std::string& algorithm, int numCities, int iterations, double avgTime, double avgCost) {
+void Config::saveResultsToCSV(std::string& algorithm, bool symmetric, int numCities, int iterations, double avgTime, double avgCost) {
     std::string filename;
 
     // Select the file name based on the algorithm type
@@ -57,10 +59,14 @@ void Config::saveResultsToCSV(std::string& algorithm, int numCities, int iterati
         filename = "branch_and_bound_best_first_results.csv";
     }
 
+    std::string isSymmetric;
+
+    if (symmetric) isSymmetric = "Symmetric";
+    else isSymmetric = "Asymmetric";
     std::ofstream outFile(filename, std::ios::app);
 
     if (outFile.is_open()) {
-        outFile << algorithm << "," << numCities << "," << iterations << "," << avgTime << "\n";
+        outFile << isSymmetric << "," << numCities << "," << avgTime << "\n";
         outFile.close();
     } else {
         // Error message if file cannot be opened

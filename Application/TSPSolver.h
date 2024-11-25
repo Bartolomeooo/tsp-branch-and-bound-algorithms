@@ -3,8 +3,10 @@
 
 
 #include "CostMatrixGraph.h"
+#include "SymmetricCostMatrix.h"
 #include "Config.h"
 #include "BranchAndBoundTSPAlgorithms.h"
+#include "SymmetricBranchAndBoundTSPAlgorithms.h"
 
 class TSPSolver {
 public:

@@ -1,40 +1,28 @@
 #ifndef SYMMETRICCOSTMATRIX_H
 #define SYMMETRICCOSTMATRIX_H
+
 #include <string>
 
-
 class SymmetricCostMatrix {
-public:
-    // Constructor to initialize the cost matrix with the given number of cities
-    SymmetricCostMatrix(int numOfCities);
-
-    // Destructor to free dynamically allocated memory
-    ~SymmetricCostMatrix();
-
-    // Set the cost between two cities
-    void setCost(int city1, int city2, int cost);
-
-    // Get the cost between two cities
-    int getCost(int city1, int city2) const;
-
-    // Get the number of cities in the matrix
-    int getNumOfCities() const;
-
-    // Fill the cost matrix from a file
-    void fillFromFile(const std::string& filePath);
-
-    // Fill the cost matrix with random data
-    void fillRandom(int maxCost);
-
-    // Print the cost matrix
-    void printMatrix() const;
-
 private:
-    int numOfCities;     // Number of cities in the matrix
-    int* costs;          // Pointer to dynamically allocated array storing costs
+    int* costs; // Dynamic array for storing costs
+    int numOfCities; // Number of vertices (cities)
 
-    // Calculate the index for storing the cost between two cities in the dynamic array
-    int index(int row, int col) const;
+    int index(int row, int col); // Calculate the index in the array for given row and column
+
+public:
+    SymmetricCostMatrix(); // Default constructor
+    SymmetricCostMatrix(int numOfCities); // Constructor with number of vertices
+    ~SymmetricCostMatrix(); // Destructor
+
+    void printGraph(); // Print the cost matrix
+    void setNumOfCities(int num); // Set the number of vertices
+    int getNumOfCities(); // Get the number of vertices
+    int getCost(int city1, int city2); // Get the cost between two cities
+    void setCost(int city1, int city2, int cost); // Set the cost between two cities
+    void addVertexes(int vertexes); // Allocate memory for the graph
+    void fillGraphFromFile(std::string& filePath); // Fill the graph from a file
+    void generateRandomCostMatrix(int numOfCities); // Generate a random symmetric cost matrix
 };
 
-#endif //SYMMETRICCOSTMATRIX_H
+#endif

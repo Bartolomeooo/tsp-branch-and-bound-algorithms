@@ -9,16 +9,15 @@ struct ConfigData {
     std::string matrixFile;
     int iterations;
     bool randomData;
-    std::string outputCsv;
+    bool symmetricMatrix;
     int numCities;
     bool progressInfo;
-    float randomIterations;
 };
 
 class Config {
 public:
     ConfigData loadConfig(const std::string& configFile);
-    static void saveResultsToCSV(std::string& algorithm, int numCities, int iterations, double avgTime, double avgCost);
+    static void saveResultsToCSV(std::string& algorithm, bool symmetric,  int numCities, int iterations, double avgTime, double avgCost);
 };
 
 

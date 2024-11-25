@@ -11,3 +11,13 @@ branch_and_bound_bfs,9,1,71.2129
 branch_and_bound_bfs,9,1,71.7769
 branch_and_bound_bfs,9,1,0.20575
 branch_and_bound_bfs,9,1,73.4874
+Symmetric,9,0.0585
+Asymmetric,9,0.093875
+Symmetric,9,0.060166
+Asymmetric,3,0.000590873
+Asymmetric,4,0.00254061
+Asymmetric,5,0.0122072
+Asymmetric,6,0.0786276
+Asymmetric,7,1.42194
+Asymmetric,8,59.8894
+Asymmetric,9,3933.88

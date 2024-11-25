@@ -98,8 +98,6 @@ void CostMatrixGraph::generateRandomCostMatrix(int numOfCities) {
         addVertexes(numOfCities);  // Reallocate memory if the number of vertices changes
     }
 
-    srand(time(0));  // Seed the random number generator
-
     // Overwrite values in the existing matrix
     for (int i = 0; i < numOfCities; i++) {
         for (int j = 0; j < numOfCities; j++) {
