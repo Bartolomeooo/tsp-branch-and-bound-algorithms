@@ -1,17 +1,20 @@
-// Stack.h
 #ifndef STACK_H
 #define STACK_H
 
 #include <vector>
+#include <stdexcept>
 
 class Stack {
 public:
     struct Node {
-        std::vector<int> path;
-        int cost;
-        int bound;
-        int currentCity;
+        std::vector<int> path;  // Path of the node
+        int cost;               // Cost of the node
+        int bound;              // Bound of the node
+        int currentCity;        // Current city in the node
     };
+
+    Stack();  // Constructor
+    ~Stack(); // Destructor
 
     // Push a node onto the stack
     void push(const Node& node);
@@ -23,7 +26,8 @@ public:
     bool empty() const;
 
 private:
-    std::vector<Node> stack;
+    Node* stack;     // Dynamic array for storing nodes
+    int size;        // Current number of elements in the stack
 };
 
 #endif // STACK_H

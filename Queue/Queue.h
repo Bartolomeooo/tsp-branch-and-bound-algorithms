@@ -14,6 +14,9 @@ public:
         int currentCity;        // The current city in the node
     };
 
+    Queue(); // Constructor
+    ~Queue(); // Destructor
+
     // Add a new node to the queue
     void push(const Node& node);
 
@@ -27,7 +30,8 @@ public:
     bool empty() const;
 
 private:
-    std::vector<Node> data;  // Internal storage for the queue
+    Node* data;       // Dynamic array for the queue
+    int size;         // Current number of elements in the queue
 };
 
 #endif // QUEUE_H

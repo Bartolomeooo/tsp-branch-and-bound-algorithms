@@ -1,7 +1,7 @@
 algorithm=branch_and_bound_dfs
-matrix_file=Smatrix_8x8.atsp
-iterations=100
+matrix_file=matrix_8x8.atsp
+iterations=1
 symmetric_matrix=false
-random_data=true
+random_data=false
 num_cities=9
-progress_info=true
+progress_info=false

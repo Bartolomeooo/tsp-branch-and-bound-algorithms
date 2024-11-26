@@ -1,16 +1,3 @@
-branch_and_bound_bfs,8,10,66.7762
-branch_and_bound_bfs,4,100,0.00514751
-branch_and_bound_bfs,5,100,0.0378779
-branch_and_bound_bfs,6,100,0.18645
-branch_and_bound_bfs,7,100,2.21567
-branch_and_bound_bfs,8,100,67.1911
-branch_and_bound_bfs,9,10,3788.81
-branch_and_bound_bfs,3,100,0.00130373
-branch_and_bound_bfs,9,1,71.9107
-branch_and_bound_bfs,9,1,71.2129
-branch_and_bound_bfs,9,1,71.7769
-branch_and_bound_bfs,9,1,0.20575
-branch_and_bound_bfs,9,1,73.4874
 Symmetric,9,0.0585
 Asymmetric,9,0.093875
 Symmetric,9,0.060166
@@ -21,3 +8,4 @@ Asymmetric,6,0.0786276
 Asymmetric,7,1.42194
 Asymmetric,8,59.8894
 Asymmetric,9,3933.88
+Asymmetric,9,2320.24
